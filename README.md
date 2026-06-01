@@ -3,6 +3,14 @@
 This docker image can be used to convert an ONNX exported **yolov8s model** to Hailo's **HEF format**.
 This docker image might work for other yolo model versions with some modifications, but yolov8 is the priority
 
+## Video
+
+### This is a video that I made, might be useful. It'll be updated in the future
+
+```
+https://www.youtube.com/watch?v=tDq6RIIhIlc
+```
+
 ## Pre-requisites
 
 - Docker
