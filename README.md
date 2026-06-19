@@ -37,7 +37,9 @@ This other repo mentioned above is very janky, at least at the moment. You shoul
 
 ### 1. Find Binaries ***Non-Negotiable***
 
-You need to find the binaries that hailo provides, I cannot give these to you, and you must find them elsewhere. Once you have them, place them on the root of the cloned repository. 
+You need to find the binaries that hailo provides, I cannot give these to you, and you must find them elsewhere. 
+Once you have them, place them on the root of the cloned repository. 
+See [additional-requirements](additional-requirements.md) for more details.
 
 ### 2. Build the docker image
 
