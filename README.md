@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=tDq6RIIhIlc
 - Docker
 - ONNX exported model (only yolov8s)
 - Calibration images (from your training data)
-- Project intallation binaries from Hailo. For more details, see [additional-requirements](additional-requirements.txt)
+- Project intallation binaries from Hailo. For more details, see [additional-requirements](additional-requirements.md)
 
 ## Usage
 
@@ -33,8 +33,11 @@ For reference see:
 - https://github.com/hailo-ai/hailo_model_zoo/blob/master/training/yolov8/README.rst
 
 See this repo for an automated, complementary training container meant to work with this one: [generating-onnx](https://github.com/S1eeee/generating-onnx)
+This other repo mentioned above is very janky, at least at the moment. You should avoid using it if you can. However, it should be fine for quick reiterations or as a way to quickly move on to an initial proof of concept.
 
+### 1. Find Binaries ***Non-Negotiable***
 
+You need to find the binaries that hailo provides, I cannot give these to you, and you must find them elsewhere. Once you have them, place them on the root of the cloned repository. 
 
 ### 2. Build the docker image
 
@@ -42,7 +45,7 @@ See this repo for an automated, complementary training container meant to work w
 docker build -t hailo_converter .
 ```
 
-### 4. Prepare model and calibration images 
+### 3. Prepare model and calibration images 
 
 Place the **ONNX model** and **calibration images folder** in the repository root.
 
@@ -52,11 +55,11 @@ Place the **ONNX model** and **calibration images folder** in the repository roo
 
 Obtaining these calibration images can be easily taken from your training images, but you might find it difficult to select up to 64 images representative of your dataset. If this is the case, you can try [This Script](/calibration_imgs/calibration-gathering.sh)
 
-### 5. Update parameters ***DO NOT SKIP***
+### 4. Update parameters ***DO NOT SKIP***
 
 See [updating-parameters](updating-parameters.md) for more details
 
-### 6. Run the docker image
+### 5. Run the docker image
 
 Ensure that the current directory is where the ONNX model and calibration images are placed.
 
@@ -136,6 +139,10 @@ sudo docker run -v $(pwd):/workspace --gpus all --ipc=host hailo_converter:lates
 
 7. Let docker work
 
-    Let it do its thing, it will output text to the terminal, and if all goes well, your onnx will turn into a hef
+    Let it do its thing, it will output text to the terminal, and if all goes well, you will obtain a HEF.
 
-8. Once done, visit [results](/results/) to recover your compiled hef
+8. Once done, visit [results](/results/) to recover your compiled hef. The container cleans up artifacts that are generated during this process, you may delete them or move them elsewhere, all end up in [results](/results/). Anyhow, the container root is returned to a clean state and you can go from there.
+
+
+
+I am planning on making changes to this repo in order to make things easier to configure and change, though I'll be updating soon enough.

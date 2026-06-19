@@ -1,4 +1,5 @@
 In order to run this container, you need to place the following, or similar, in the root of the project. (if you use different names be sure to update the dockerfile, improvements to such workflow are planned)
+
 Note that the project has only been tested with the exact files mentioned here, you are on your own if you decide to use older or newer versions of this software
 
 ```
@@ -27,3 +28,5 @@ Some of the AI Vision Processor downloads and documents are restricted to author
 As for ```jaxlib 0.4.13```, you can find the wheel [Here](https://dashboard.stablebuild.com/pypi-deleted-packages/pkg/jaxlib/0.4.13)
 
 Place it in the root of the project, along with the other binaries you have downloaded. Once this is done, you are ready to follow the project [Instructions](readme.md)
+
+Please also note that figuring out dependencies was a bit rushed, and I am sure that I can get these down to a lower count, I'll just need some testing. For now, if you can test this yourself, please do let me know.
